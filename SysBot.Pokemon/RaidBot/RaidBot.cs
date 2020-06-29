@@ -127,7 +127,7 @@ namespace SysBot.Pokemon
             RaidLog(sav, linkcodemsg, raiddescmsg);
 
             if (Hub.Config.Raid.EchoRaidNotifications)
-                EchoUtil.Echo($"```fix\nRaid lobby for {raiddescmsg} is open with {linkcodemsg}.```");
+                EchoUtil.Echo($"Raid lobby for {raiddescmsg} is open with {linkcodemsg}.");
 
             var timetowait = Hub.Config.Raid.MinTimeToWait * 1_000;
             var timetojoinraid = 175_000 - timetowait;
@@ -142,7 +142,7 @@ namespace SysBot.Pokemon
 
             await Task.Delay(1_000, token).ConfigureAwait(false);
             if (Hub.Config.Raid.EchoRaidNotifications)
-                EchoUtil.Echo($"```fix\nRaid is starting now with {linkcodemsg}.```");
+                EchoUtil.Echo($"Raid is starting now with {linkcodemsg}.");
 
             /* Press A and check if we entered a raid.  If other users don't lock in,
                it will automatically start once the timer runs out. If we don't make it into
