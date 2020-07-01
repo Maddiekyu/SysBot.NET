@@ -114,7 +114,7 @@ namespace SysBot.Pokemon
             }
 
             if (addFriends && !string.IsNullOrEmpty(Settings.FriendCode))
-                EchoUtil.Echo($"```fix\nSend a friend request to Friend Code **{Settings.FriendCode}** to join in! Friends will be added after this raid.```");
+                EchoUtil.Echo($"Send a friend request to Friend Code **{Settings.FriendCode}** to join in! Friends will be added after this raid.");
 
             // Invite others, confirm Pokémon and wait
             await Click(A, 7_000 + Hub.Config.Raid.ExtraTimeOpenRaid, token).ConfigureAwait(false);
@@ -388,7 +388,7 @@ namespace SysBot.Pokemon
 
                     var data = await Connection.ReadBytesAsync(RaidBossOffset, 2, token).ConfigureAwait(false);
                     raidBossSpecies = BitConverter.ToUInt16(data, 0);
-                    EchoUtil.Echo($"```fix\nRolling complete. Raid for {(Species)raidBossSpecies} will be going up shortly!```");
+                    EchoUtil.Echo($"```css\nRolling complete. Raid for {(Species)raidBossSpecies} will be going up shortly!```");
 
                     for (int i = 0; i < 2; i++)
                         await Click(B, 0_500, token).ConfigureAwait(false);
